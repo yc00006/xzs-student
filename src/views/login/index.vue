@@ -1,37 +1,41 @@
 <template>
   <div class="lowin  lowin-blue">
     <div class="lowin-brand">
-      <img src="@/assets/logo2.png" alt="logo" style="margin-top: 12px">
+<!--      <img src="@/assets/logo2.png" alt="logo" style="margin-top: 12px">-->
+      <img src="@/assets/200-cutout.png" alt="logo" style="margin-top: 1px">
     </div>
     <div class="lowin-wrapper">
       <div class="lowin-box lowin-login">
         <div class="lowin-box-inner">
           <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
-            <p>学之思开源考试系统</p>
+<!--            <p>学之思开源考试系统</p>-->
+            <p>培训平台竞赛模块</p>
             <div class="lowin-group">
               <label>用户名 </label>
               <el-input ref="userName" v-model="loginForm.userName" class="lowin-input" placeholder="用户名" name="userName" type="text" tabindex="1" auto-complete="on"/>
             </div>
             <div class="lowin-group password-group">
-              <label>密码 <a href="#" class="forgot-link">忘记密码?</a></label>
+<!--              <label>密码 <a href="#" class="forgot-link">忘记密码?</a></label>-->
+              <label>密码 </label>
               <el-input  class="lowin-input" :key="passwordType" ref="password" v-model="loginForm.password" :type="passwordType"
                 placeholder="密码" name="password" tabindex="2" auto-complete="on" @keyup.native="checkCapslock" @blur="capsTooltip = false" @keyup.enter.native="handleLogin"/>
             </div>
 
             <el-button :loading="loading" type="text" class="lowin-btn login-btn"  @click.native.prevent="handleLogin">登录</el-button>
 
-            <div class="text-foot">
-              还没有账号?
-              <router-link to="/register" class="register-link">
-                注册
-              </router-link>
-            </div>
+<!--            <div class="text-foot">-->
+<!--              还没有账号?-->
+<!--              <router-link to="/register" class="register-link">-->
+<!--                注册-->
+<!--              </router-link>-->
+<!--            </div>-->
           </el-form>
         </div>
       </div>
     </div>
     <div class="account-foot-copyright">
-      <span>Copyright ©2019-2024 武汉思维跳跃科技有限公司 版权所有</span>
+<!--      <span>Copyright ©2019-2024 武汉思维跳跃科技有限公司 版权所有</span>-->
+      <span>Copyright ©2019-2024 XXX有限公司 版权所有</span>
     </div>
   </div>
 </template>
@@ -142,6 +146,12 @@ export default {
       background-color: transparent !important;
       border: 0px !important;
     }
+
+    .el-input__inner:-webkit-autofill {
+      transition: background-color 50000s ease-in-out 0s;
+      -webkit-text-fill-color: #606266; //记住密码的颜色
+      caret-color: #fff;//改变输入框光标颜色,同时又不改变输入框里面的内容的颜色
+    }
   }
 </style>
 
@@ -180,7 +190,8 @@ export default {
   }
 
   .lowin a {
-    color: var(--color-primary);
+    /*color: var(--color-primary);*/
+    color: #d8d8d8;
     text-decoration: none;
     border-bottom: 1px dashed var(--color-semidark);
     margin-top: -3px;
@@ -197,11 +208,13 @@ export default {
     width: 100px;
     height: 100px;
     margin: 0 auto -50px auto;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
+    border-radius: 25%;
     -webkit-box-shadow: 0 4px 40px rgba(0, 0, 0, .07);
     box-shadow: 0 4px 40px rgba(0, 0, 0, .07);
     padding: 10px;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: #ad292c;
     z-index: 1;
     position: relative;
   }
@@ -217,30 +230,40 @@ export default {
   }
 
   .lowin .lowin-box-inner {
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: #1d1e23;
     -webkit-box-shadow: 0 7px 25px rgba(0, 0, 0, .08);
-    box-shadow: 0 7px 25px rgba(0, 0, 0, .08);
+    /*box-shadow: 0 7px 25px rgba(0, 0, 0, .08);*/
     padding: 60px 25px 25px 25px;
     text-align: left;
     border-radius: 3px;
+
+    transition: ease all .3s;
+    border: 1px solid #676767;
+    box-shadow: inset 0 0 40px rgba(255,255,255,.30);
   }
 
-  .lowin .lowin-box::after {
-    content: ' ';
-    -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, .1);
-    box-shadow: 0 0 25px rgba(0, 0, 0, .1);
-    -webkit-transform: translate(0, -92.6%) scale(.88);
-    -ms-transform: translate(0, -92.6%) scale(.88);
-    transform: translate(0, -92.6%) scale(.88);
-    border-radius: 3px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    z-index: -1;
+  .lowin .lowin-box-inner:hover{
+    background-color: #1d1e23;
+    box-shadow: inset 0 0 0px rgba(255,255,255,.30);
   }
+
+  /*.lowin .lowin-box::after {*/
+  /*  content: ' ';*/
+  /*  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, .1);*/
+  /*  box-shadow: 0 0 25px rgba(0, 0, 0, .1);*/
+  /*  -webkit-transform: translate(0, -92.6%) scale(.88);*/
+  /*  -ms-transform: translate(0, -92.6%) scale(.88);*/
+  /*  transform: translate(0, -92.6%) scale(.88);*/
+  /*  border-radius: 3px;*/
+  /*  position: absolute;*/
+  /*  top: 100%;*/
+  /*  left: 0;*/
+  /*  width: 100%;*/
+  /*  height: 100%;*/
+  /*  background-color: #fff;*/
+  /*  z-index: -1;*/
+  /*}*/
 
   .lowin .lowin-box.lowin-flip {
     -webkit-transform: rotate3d(0, 1, 0, -180deg);
@@ -250,7 +273,8 @@ export default {
   }
 
   .lowin .lowin-box p {
-    color: var(--color-semidark);
+    /*color: var(--color-semidark);*/
+    color: #d8d8d8;
     font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
@@ -264,7 +288,8 @@ export default {
     margin-bottom: 5px;
     display: inline-block;
     width: 100%;
-    color: var(--color-semidark);
+    /*color: var(--color-semidark);*/
+    color: #6d3233;
     font-weight: 700;
   }
 
@@ -289,7 +314,8 @@ export default {
     color: #fff;
     padding: 15px;
     border-radius: 3px;
-    background-color: var(--color-primary);
+    /*background-color: var(--color-primary);*/
+    background-color: #AE4446;
     -webkit-box-shadow: 0 2px 7px var(--color-semidark);
     box-shadow: 0 2px 7px var(--color-semidark);
     font-weight: 700;
@@ -307,6 +333,8 @@ export default {
 
   .lowin .lowin-box .lowin-btn:hover {
     opacity: .9;
+
+    background-color: #6d3233;
   }
 
   .lowin .text-foot {

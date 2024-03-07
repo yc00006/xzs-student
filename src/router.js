@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '@/layout'
+// import Layout from '@/layout'
+
+const Layout = () => import('@/layout')
 
 Vue.use(Router)
 const router = new Router({
   routes: [
-    { path: '/login', name: 'Login', component: () => import('@/views/login/index'), meta: { title: '登录', bodyBackground: '#fbfbfb' } },
+    { path: '/login', name: 'Login', component: () => import('@/views/login/index'), meta: { title: '登录', bodyBackground: 'url(' + require('./assets/2345.jpg') + ')' } },
     { path: '/register', name: 'Register', component: () => import('@/views/register/index'), meta: { title: '注册', bodyBackground: '#fbfbfb' } },
     {
       path: '/',

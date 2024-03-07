@@ -34,7 +34,10 @@ const request = function (loadtip, query) {
       if (loadtip) {
         loading.close()
       }
-      vue.prototype.$message.error(e.message)
+      if (e.code !== 401) {
+        vue.prototype.$message.error(e.message)
+      }
+      // vue.prototype.$message.error(e.message)
       return Promise.reject(e.message)
     })
 }
