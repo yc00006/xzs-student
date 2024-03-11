@@ -19,46 +19,48 @@
         </el-dropdown>
       </div>
       <el-menu class="el-menu-title" mode="horizontal" :default-active="defaultUrl" :router="true">
-        <el-menu-item index="/index">首页</el-menu-item>
-        <el-menu-item index="/paper/index">试卷中心</el-menu-item>
-        <el-menu-item index="/record/index">考试记录</el-menu-item>
-        <el-menu-item index="/question/index">错题本</el-menu-item>
+<!--        <el-menu-item index="/index">赛事中心</el-menu-item>-->
+<!--        <el-menu-item index="/questionlist/index">赛事题目列表</el-menu-item>-->
+<!--        <el-menu-item index="/paper/index">试卷中心</el-menu-item>-->
+<!--        <el-menu-item index="/record/index">考试记录</el-menu-item>-->
+<!--        <el-menu-item index="/question/index">错题本</el-menu-item>-->
       </el-menu>
       <div>
-        <a href="/"><img src="@/assets/logo.png" height="56"/></a>
+<!--        <a href="/"><img src="@/assets/logo.png" height="56"/></a>-->
+        <a href="/"><img src="@/assets/200-red-cutout.png" height="56"/></a>
       </div>
     </el-header>
     <el-main class="student-main">
       <router-view/>
     </el-main>
     <el-footer height="340" class="student-footer">
-      <div class="foot-container">
-        <div class="footer-main">
-          <h4>产品介绍</h4>
-          <a href="https://www.mindskip.net/sdd.html" target="_blank" class="footer-main-link">思多多智能考试系统</a>
-          <a href="https://www.mindskip.net/wdd.html" target="_blank" class="footer-main-link">维多多培训考试系统</a>
-          <a href="https://www.mindskip.net/xzs.html" target="_blank" class="footer-main-link">学之思开源考试系统</a>
-        </div>
-        <div class="footer-main">
-          <h4>微信小程序</h4>
-          <img src="@/assets/code/3.jpg" style="width: 100px;height: 100px;margin-right: 30px"/>
-          <img src="@/assets/code/7.jpg" style="width: 100px;height: 100px;margin-right: 30px"/>
-          <img src="@/assets/code/1.jpg" style="width: 100px;height: 100px;"/>
-        </div>
-        <div class="footer-main">
-          <h4>关于我们</h4>
-          <img src="@/assets/4.jpg" style="width: 100px;height: 100px;"/>
-        </div>
-        <div class="footer-main">
-          <h4>文档中心</h4>
-          <a href="https://gitee.com/mindskip" target="_blank" class="footer-main-link">学之思仓库地址</a>
-          <a href="https://www.mindskip.net:999" target="_blank" class="footer-main-link">学之思开发文档</a>
-          <a href="https://ke.qq.com/course/3614230" target="_blank" class="footer-main-link">学之思视频教程</a>
-        </div>
-      </div>
+<!--      <div class="foot-container">-->
+<!--        <div class="footer-main">-->
+<!--          <h4>产品介绍</h4>-->
+<!--          <a href="https://www.mindskip.net/sdd.html" target="_blank" class="footer-main-link">思多多智能考试系统</a>-->
+<!--          <a href="https://www.mindskip.net/wdd.html" target="_blank" class="footer-main-link">维多多培训考试系统</a>-->
+<!--          <a href="https://www.mindskip.net/xzs.html" target="_blank" class="footer-main-link">学之思开源考试系统</a>-->
+<!--        </div>-->
+<!--        <div class="footer-main">-->
+<!--          <h4>微信小程序</h4>-->
+<!--          <img src="@/assets/code/3.jpg" style="width: 100px;height: 100px;margin-right: 30px"/>-->
+<!--          <img src="@/assets/code/7.jpg" style="width: 100px;height: 100px;margin-right: 30px"/>-->
+<!--          <img src="@/assets/code/1.jpg" style="width: 100px;height: 100px;"/>-->
+<!--        </div>-->
+<!--        <div class="footer-main">-->
+<!--          <h4>关于我们</h4>-->
+<!--          <img src="@/assets/4.jpg" style="width: 100px;height: 100px;"/>-->
+<!--        </div>-->
+<!--        <div class="footer-main">-->
+<!--          <h4>文档中心</h4>-->
+<!--          <a href="https://gitee.com/mindskip" target="_blank" class="footer-main-link">学之思仓库地址</a>-->
+<!--          <a href="https://www.mindskip.net:999" target="_blank" class="footer-main-link">学之思开发文档</a>-->
+<!--          <a href="https://ke.qq.com/course/3614230" target="_blank" class="footer-main-link">学之思视频教程</a>-->
+<!--        </div>-->
+<!--      </div>-->
     </el-footer>
     <div class="foot-copyright">
-      <span>Copyright ©2019-2024 武汉思维跳跃科技有限公司 版权所有</span>
+      <span>Copyright ©2019-2024 XXX有限公司 版权所有</span>
     </div>
   </el-container>
 </template>

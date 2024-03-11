@@ -8,17 +8,30 @@ Vue.use(Router)
 const router = new Router({
   routes: [
     { path: '/login', name: 'Login', component: () => import('@/views/login/index'), meta: { title: '登录', bodyBackground: 'url(' + require('./assets/2345.jpg') + ')' } },
-    { path: '/register', name: 'Register', component: () => import('@/views/register/index'), meta: { title: '注册', bodyBackground: '#fbfbfb' } },
+    // { path: '/register', name: 'Register', component: () => import('@/views/register/index'), meta: { title: '注册', bodyBackground: '#fbfbfb' } },
     {
       path: '/',
       component: Layout,
       redirect: '/index',
+      // meta: { title: '赛事中心', bodyBackground: 'url(' + require('./assets/756.jpg') + ')' },
       children: [
         {
           path: 'index',
           component: () => import('@/views/dashboard/index'),
           name: 'Dashboard',
-          meta: { title: '首页' }
+          meta: { title: '首页', bodyBackground: 'url(' + require('./assets/756.jpg') + ')' }
+        }
+      ]
+    },
+    {
+      path: '/questionlist',
+      component: Layout,
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/question-list/index'),
+          name: 'QuestionListIndex',
+          meta: { title: '赛事题目列表' }
         }
       ]
     },
