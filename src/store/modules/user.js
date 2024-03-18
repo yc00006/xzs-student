@@ -30,6 +30,8 @@ const mutations = {
   },
   setUserInfo: (state, userInfo) => {
     state.userInfo = userInfo
+    console.log('userInfo')
+    console.log(userInfo)
     Cookies.set('studentUserInfo', userInfo, { expires: 30 })
   },
   setImagePath: (state, imagePath) => {

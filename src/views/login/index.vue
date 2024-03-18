@@ -9,7 +9,7 @@
         <div class="lowin-box-inner">
           <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
 <!--            <p>学之思开源考试系统</p>-->
-            <p>培训平台竞赛模块</p>
+            <p>培训平台</p>
             <div class="lowin-group">
               <label>用户名 </label>
               <el-input ref="userName" v-model="loginForm.userName" class="lowin-input" placeholder="用户名" name="userName" type="text" tabindex="1" auto-complete="on"/>
@@ -121,8 +121,17 @@ export default {
           this.loading = true
           loginApi.login(this.loginForm).then(function (result) {
             if (result && result.code === 1) {
+              if (result.response) {
+                _this.setUserInfo(result.response)
+              }
+              let userLevel = result.response.userLevel
               _this.setUserName(_this.loginForm.userName)
-              _this.$router.push({ path: '/' })
+              // _this.$router.push({ path: '/' })
+              if (userLevel === 1) {
+                _this.$router.push({ path: '/' })
+              } else if (userLevel === 2) {
+                _this.$router.push({ path: '/exam/index' })
+              }
             } else {
               _this.loading = false
               _this.$message.error(result.message)
@@ -135,7 +144,7 @@ export default {
         }
       })
     },
-    ...mapMutations('user', ['setUserName'])
+    ...mapMutations('user', ['setUserName', 'setUserInfo'])
   }
 }
 </script>

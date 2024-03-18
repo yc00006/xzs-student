@@ -14,12 +14,14 @@ module.exports = {
   devServer: {
     open: true,
     host: 'localhost',
+    // host: '192.168.0.130',
     port: 8001,
     https: false,
     hotOnly: false,
     proxy: {
       '/api': {
         target: 'http://localhost:8000',
+        // target: 'http://192.168.0.119:8087',
         changeOrigin: true
       }
     }

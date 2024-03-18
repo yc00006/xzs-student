@@ -75,7 +75,8 @@ export default {
     return {
       defaultUrl: '/index',
       userInfo: {
-        imagePath: null
+        imagePath: null,
+        userLevel: null
       }
     }
   },
